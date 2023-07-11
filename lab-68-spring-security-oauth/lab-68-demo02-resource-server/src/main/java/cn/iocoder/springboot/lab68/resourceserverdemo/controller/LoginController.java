@@ -36,7 +36,8 @@ public class LoginController {
         OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails);
         restTemplate.setAccessTokenProvider(new ResourceOwnerPasswordAccessTokenProvider());
         // 获取访问令牌
-        return restTemplate.getAccessToken();
+        OAuth2AccessToken accessToken = restTemplate.getAccessToken();
+        return accessToken;
     }
 
 }

@@ -32,7 +32,7 @@ public class CallbackController {
         // 创建 OAuth2RestTemplate 对象
         OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails);
         restTemplate.getOAuth2ClientContext().getAccessTokenRequest().setAuthorizationCode(code); // 设置 code
-        restTemplate.getOAuth2ClientContext().getAccessTokenRequest().setPreservedState("http://127.0.0.1:9090/callback"); // 通过这个方式，设置 redirect_uri 参数
+        restTemplate.getOAuth2ClientContext().getAccessTokenRequest().setPreservedState("http://127.0.0.1:9091/callback"); // 通过这个方式，设置 redirect_uri 参数
         restTemplate.setAccessTokenProvider(new AuthorizationCodeAccessTokenProvider());
         // 获取访问令牌
         return restTemplate.getAccessToken();
