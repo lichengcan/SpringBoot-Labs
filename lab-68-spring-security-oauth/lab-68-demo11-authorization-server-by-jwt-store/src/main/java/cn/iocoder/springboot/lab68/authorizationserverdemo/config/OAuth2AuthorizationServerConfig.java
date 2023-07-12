@@ -28,7 +28,7 @@ public class OAuth2AuthorizationServerConfig extends AuthorizationServerConfigur
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("nainai_zui_shuai"); // JWT 秘钥
+        converter.setSigningKey("ccnaive"); // JWT 秘钥
         return converter;
     }
 

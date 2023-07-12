@@ -32,7 +32,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 不使用 PasswordEncoder 密码编码器
                 .passwordEncoder(passwordEncoder())
                 // 配置 yunai 用户
-                .withUser("yunai").password("1024").roles("USER");
+                .withUser("lichengcan").password("1024").roles("USER");
     }
 
+    //获取到的token可以到https://jwt.io/解析
 }
