@@ -37,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 扣减余额
         accountService.reduceBalance(new AccountReduceBalanceDTO().setUserId(userId).setPrice(price));
-
+        int i = 1 / 0;
         // 保存订单
         OrderDO order = new OrderDO().setUserId(userId).setProductId(productId).setPayAmount(amount * price);
         orderDao.saveOrder(order);

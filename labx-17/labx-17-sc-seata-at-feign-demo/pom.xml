@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>labx-17-sc-seata-at-feign-demo</artifactId>
-
+    <packaging>pom</packaging>
     <modules>
         <module>labx-17-sc-seata-at-feign-demo-account-service</module>
         <module>labx-17-sc-seata-at-feign-demo-product-service</module>
