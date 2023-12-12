@@ -27,7 +27,7 @@ public class Demo15ProducerTest {
         producer.syncSend(id,content);
         logger.info("[testSyncSend][发送编号：[{}] 发送成功]", id+content);
         // 阻塞等待，保证消费：等计数器小于0，消费完毕才会停止
-        new CountDownLatch(1).await();
+//        new CountDownLatch(1).await();
     }
 
 }
