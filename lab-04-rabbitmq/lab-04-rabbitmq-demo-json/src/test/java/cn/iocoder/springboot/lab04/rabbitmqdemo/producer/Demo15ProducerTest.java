@@ -23,10 +23,10 @@ public class Demo15ProducerTest {
     @Test
     public void testSyncSend() throws InterruptedException {
         int id = (int) (System.currentTimeMillis() / 1000);
-        producer.syncSend(id);
-        logger.info("[testSyncSend][发送编号：[{}] 发送成功]", id);
-
-        // 阻塞等待，保证消费
+        String content = "李承灿大帅逼";
+        producer.syncSend(id,content);
+        logger.info("[testSyncSend][发送编号：[{}] 发送成功]", id+content);
+        // 阻塞等待，保证消费：等计数器小于0，消费完毕才会停止
         new CountDownLatch(1).await();
     }
 

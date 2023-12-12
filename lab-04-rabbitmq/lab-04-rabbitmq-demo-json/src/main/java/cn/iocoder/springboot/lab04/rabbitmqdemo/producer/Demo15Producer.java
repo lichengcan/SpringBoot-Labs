@@ -11,10 +11,11 @@ public class Demo15Producer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void syncSend(Integer id) {
+    public void syncSend(Integer id,String content) {
         // 创建 Demo01Message 消息
         Demo15Message message = new Demo15Message();
         message.setId(id);
+        message.setContent(content);
         // 同步发送消息
         rabbitTemplate.convertAndSend(Demo15Message.EXCHANGE, Demo15Message.ROUTING_KEY, message);
     }
