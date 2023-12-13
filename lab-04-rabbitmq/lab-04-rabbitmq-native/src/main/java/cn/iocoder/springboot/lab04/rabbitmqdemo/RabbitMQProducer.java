@@ -10,10 +10,10 @@ import java.util.concurrent.TimeoutException;
 
 public class RabbitMQProducer {
 
-    private static final String IP_ADDRESS = "127.0.0.1";
+    private static final String IP_ADDRESS = "192.168.104.128";
     private static final Integer PORT = 5672;
-    private static final String USERNAME = "guest";
-    private static final String PASSWORD = "guest";
+    private static final String USERNAME = "rabbituser";
+    private static final String PASSWORD = "123456";
 
     private static final String EXCHANGE_NAME = "exchange_demo";
     private static final String ROUTING_KEY = "routingkey_demo";
