@@ -6,6 +6,9 @@ import java.lang.annotation.*;
 
 import static java.lang.annotation.ElementType.*;
 
+/**
+ * @author lichengcan
+ */
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
