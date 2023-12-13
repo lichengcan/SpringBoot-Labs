@@ -14,6 +14,7 @@ import java.io.IOException;
 @Component
 public class Demo13Producer {
 
+
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
