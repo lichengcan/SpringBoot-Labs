@@ -16,9 +16,6 @@ public class Demo01Consumer {
         logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), message);
     }
 
-//    @JmsListener(destination = Demo01Message.QUEUE)
-//    public void onMessage(javax.jms.Message message) {
-//        logger.info("[onMessage][线程编号:{} 消息内容：{}]", Thread.currentThread().getId(), message);
-//    }
+
 
 }

@@ -26,6 +26,7 @@ public class Demo01Producer {
     public ListenableFuture<Void> asyncSend(Integer id) {
         try {
             // 发送消息
+            int i = 1/0;
             this.syncSend(id);
             // 返回成功的 Future
             return AsyncResult.forValue(null);
