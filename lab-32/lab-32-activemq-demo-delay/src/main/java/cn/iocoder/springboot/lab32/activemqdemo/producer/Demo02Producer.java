@@ -15,6 +15,11 @@ public class Demo02Producer {
     @Autowired
     private JmsMessagingTemplate jmsTemplate;
 
+    /**
+     * 延时消费
+     * @param id
+     * @param delay
+     */
     public void syncSend(Integer id, Integer delay) {
         // 创建 Demo02Message 消息
         Demo02Message message = new Demo02Message();
