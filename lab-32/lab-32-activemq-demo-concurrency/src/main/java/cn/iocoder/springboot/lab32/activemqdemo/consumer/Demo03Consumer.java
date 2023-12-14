@@ -11,6 +11,10 @@ public class Demo03Consumer {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
+    /**
+     * 并发消费，添加concurrency字段
+     * @param message
+     */
     @JmsListener(destination = Demo03Message.QUEUE,
         concurrency = "2")
     public void onMessage(Demo03Message message) {
