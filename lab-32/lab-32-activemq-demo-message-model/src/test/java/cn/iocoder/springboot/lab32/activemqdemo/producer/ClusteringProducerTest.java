@@ -29,7 +29,7 @@ public class ClusteringProducerTest {
     @Test
     public void testSyncSend() throws InterruptedException {
         // 发送 3 条消息
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             int id = (int) (System.currentTimeMillis() / 1000);
             producer.syncSend(id);
             logger.info("[testSyncSend][发送编号：[{}] 发送成功]", id);
