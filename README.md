@@ -101,7 +101,7 @@
 
 * [《芋道 Spring Boot Redis 入门》](http://www.iocoder.cn/Spring-Boot/Redis/?github) 对应 [lab-11-spring-data-redis](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-11-spring-data-redis)
 * [《芋道 Spring Boot 缓存 Cache 入门》](http://www.iocoder.cn/Spring-Boot/Cache/?github) 对应 [lab-21](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-21)
-* [《芋道 Spring Boot MongoDB 入门》](http://www.iocoder.cn/Spring-Boot/MongoDB/?github) 对应 [lab-16-spring-data-mongo](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-16-spring-data-mongo)
+* [《芋道 Spring Boot tcp://192.168.104.128:61616DB 入门》](http://www.iocoder.cn/Spring-Boot/tcp://192.168.104.128:61616DB/?github) 对应 [lab-16-spring-data-mongo](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-16-spring-data-mongo)
 * [《芋道 Spring Boot Elasticsearch 入门》](http://www.iocoder.cn/Spring-Boot/Elasticsearch/?github) 对应 [lab-15-spring-data-es](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-15-spring-data-es)
 * [《芋道 Spring Boot Solr 入门》](http://www.iocoder.cn/Spring-Boot/Solr/?github) 对应 [lab-66](https://github.com/YunaiV/SpringBoot-Labs/tree/master/lab-66)
 
