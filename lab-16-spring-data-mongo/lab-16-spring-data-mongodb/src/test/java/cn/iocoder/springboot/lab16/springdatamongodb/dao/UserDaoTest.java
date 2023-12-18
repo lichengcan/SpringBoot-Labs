@@ -23,13 +23,13 @@ public class UserDaoTest {
     public void testInsert() {
         // 创建 UserDO 对象
         UserDO user = new UserDO();
-        user.setId(1); // 这里先临时写死一个 ID 编号，后面演示自增 ID 的时候，在修改这块
-        user.setUsername("yudaoyuanma");
-        user.setPassword("buzhidao");
+        user.setId(3); // 这里先临时写死一个 ID 编号，后面演示自增 ID 的时候，在修改这块
+        user.setUsername("lichengcan");
+        user.setPassword("111111");
         user.setCreateTime(new Date());
         // 创建 Profile 对象
         UserDO.Profile profile = new UserDO.Profile();
-        profile.setNickname("芋道源码");
+        profile.setNickname("ccbscc源码");
         profile.setGender(1);
         user.setProfile(profile);
         // 存储到 DB
@@ -42,8 +42,8 @@ public class UserDaoTest {
     public void testUpdate() {
         // 创建 UserDO 对象
         UserDO updateUser = new UserDO();
-        updateUser.setId(1);
-        updateUser.setUsername("nicai");
+        updateUser.setId(2);
+        updateUser.setUsername("lichengcan");
 
         // 执行更新
         userDao.updateById(updateUser);
