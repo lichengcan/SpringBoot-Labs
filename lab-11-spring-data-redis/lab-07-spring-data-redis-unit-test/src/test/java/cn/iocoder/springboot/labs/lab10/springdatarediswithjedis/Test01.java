@@ -38,6 +38,7 @@ public class Test01 {
         redisTemplate.execute(new RedisCallback() {
             @Override
             public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                //这里后会清空db0
                 connection.flushDb();
                 return "";
             }
