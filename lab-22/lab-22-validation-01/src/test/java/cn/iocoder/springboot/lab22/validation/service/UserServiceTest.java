@@ -12,6 +12,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.Set;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class UserServiceTest {
@@ -25,6 +27,11 @@ public class UserServiceTest {
     @Test
     public void testGet() {
         userService.get(-1);
+    }
+
+    @Test
+    public void get1(){
+        userService.get(1);
     }
 
     @Test
@@ -52,6 +59,8 @@ public class UserServiceTest {
 
         // 创建 UserAddDTO 对象
         UserAddDTO addDTO = new UserAddDTO();
+        addDTO.setUsername("adsffdsa");
+        addDTO.setPassword("123333");
         // 校验
         Set<ConstraintViolation<UserAddDTO>> result = validator.validate(addDTO);
         // 打印校验结果
