@@ -14,21 +14,35 @@
  * limitations under the License.
  */
 
-package com.ccnaive.resttemplate.demos.web.controller;
+package com.cc.userdemo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.cc.userdemo.domain.User;
+import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author lichengcan
+ */
 @RestController
-@RequestMapping("/basic")
-public class BasicController {
+@RequestMapping()
+public class UserController {
 
-    @GetMapping("/hello")
-    public String hello(@RequestParam(name = "name") String name) {
-        return "Hello " + name;
+
+    @GetMapping("/user/{id}")
+    public User user(@PathVariable Integer id) {
+        User user = new User();
+        user.setId(id);
+        user.setName("cc");
+        user.setAge(18);
+        return user;
     }
 
+    @GetMapping("/userKeyValue")
+    public User userKeyValue(@RequestParam Integer id) {
+        User user = new User();
+        user.setId(id);
+        user.setName("cc");
+        user.setAge(18);
+        return user;
+    }
 
 }

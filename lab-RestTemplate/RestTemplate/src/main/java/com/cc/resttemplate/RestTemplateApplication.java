@@ -1,13 +1,13 @@
-package com.ccnaive.resttemplatehttp;
+package com.cc.resttemplate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestTemplateHttpApplication {
+public class RestTemplateApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestTemplateHttpApplication.class, args);
+        SpringApplication.run(RestTemplateApplication.class, args);
     }
 
 }

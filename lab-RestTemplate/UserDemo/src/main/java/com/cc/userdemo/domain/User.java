@@ -14,30 +14,19 @@
  * limitations under the License.
  */
 
-package com.ccnaive.resttemplatehttp.demos.web.domain;
+package com.cc.userdemo.domain;
+
+import lombok.Data;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
+@Data
 public class User {
 
+    private Long id;
     private String name;
 
     private Integer age;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }

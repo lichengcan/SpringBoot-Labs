@@ -1,4 +1,4 @@
-package com.ccnaive.resttemplatehttp.demos.web.config;
+package com.cc.resttemplate.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,13 +1,13 @@
-package com.ccnaive.resttemplate;
+package com.cc.userdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestTemplateApplication {
+public class UserDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestTemplateApplication.class, args);
+        SpringApplication.run(UserDemoApplication.class, args);
     }
 
 }
