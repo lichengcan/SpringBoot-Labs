@@ -42,10 +42,11 @@ public class UserController {
     }
 
     @GetMapping("/userKeyValue")
-    public User userKeyValue(@RequestParam Long id) {
+    public User userKeyValue(@RequestParam(required = false) Long id,
+                             @RequestParam(required = false) String name) {
         User user = new User();
-        user.setId(id);
-        user.setName("cc");
+        user.setId(id==null?1:id);
+        user.setName(name==null?"cc":name);
         user.setAge(18);
         return user;
     }

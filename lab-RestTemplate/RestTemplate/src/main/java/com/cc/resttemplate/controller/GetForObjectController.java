@@ -23,7 +23,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/getForObject")
-public class GetForObject {
+public class GetForObjectController {
 
     @Autowired
     RestTemplate restTemplate;
