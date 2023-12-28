@@ -12,6 +12,4 @@ public class QueryRequest {
     private int PageFirstRowNumber;
     private int PageRowNum;
 
-    // Getter and Setter methods
-    // ...
 }

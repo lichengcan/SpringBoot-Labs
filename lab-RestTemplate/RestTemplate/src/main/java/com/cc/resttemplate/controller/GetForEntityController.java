@@ -1,5 +1,7 @@
 package com.cc.resttemplate.controller;
 
+import com.cc.resttemplate.domain.QueryCondition;
+import com.cc.resttemplate.domain.QueryRequest;
 import com.cc.resttemplate.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -9,7 +11,9 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -69,6 +73,32 @@ public class GetForEntityController {
         users.put("condition",conditionMap);
         return restTemplate.getForEntity(url,Map.class,users).getBody();
 
+    }
+
+    @PostMapping("/query1")
+    public Map query1() {
+        String url = "http://localhost:8080/condition/query?org={org}&condition={condition}";
+        //请求参数
+        Map<String,Object> users = new HashMap<>(2);
+        users.put("org","12333");
+        QueryRequest queryRequest = new QueryRequest();
+        queryRequest.setItemNum(10); // 设置 ItemNum 属性为 10
+        queryRequest.setQueryCount(1); // 设置 QueryCount 属性为 1
+        queryRequest.setPageFirstRowNumber(0); // 设置 PageFirstRowNumber 属性为 0
+        queryRequest.setPageRowNum(10); // 设置 PageRowNum 属性为 10
+        List<QueryCondition> conditionList = new ArrayList<>(); // 创建 QueryCondition 对象列表
+
+        QueryCondition condition1 = new QueryCondition();
+        condition1.setQueryType(1);
+        condition1.setLogicFlag(1);
+        condition1.setQueryData("data1");
+        conditionList.add(condition1);
+
+        queryRequest.setCondition(conditionList);
+        // 将 QueryRequest 对象放入 Map 中
+        //这里将对象放入map中时，Map会调用改对象的toString方法，所以需要重写toString方法
+        users.put("condition",queryRequest);
+        return restTemplate.getForEntity(url,Map.class,users).getBody();
     }
 
 }
