@@ -84,4 +84,23 @@ public class ExchangeController {
         HttpEntity<Users> request = new HttpEntity<>(users,headers);
         return restTemplate.exchange(url, HttpMethod.POST, request, Users.class).getBody();
     }
+
+    @PostMapping("/getUserMap")
+    public Map getUserMap() {
+        String url = "http://localhost:8080/userMap";
+        //请求参数
+        Map<String, Object> users = new HashMap<>(2);
+        Map<String,Object> user = new HashMap<>(2);
+        user.put("name","灿灿");
+        user.put("id",555L);
+        users.put("param1", "xxcan");
+        users.put("param2", "xx12345");
+        users.put("user",user);
+        //请求头
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        headers.set("cc", "小灿");
+        HttpEntity<Map> request = new HttpEntity<>(users,headers);
+        return restTemplate.exchange(url, HttpMethod.POST, request, Map.class).getBody();
+    }
 }

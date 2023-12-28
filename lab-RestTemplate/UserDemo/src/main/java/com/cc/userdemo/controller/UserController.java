@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 
 /**
  * @author lichengcan
@@ -64,6 +65,16 @@ public class UserController {
 
     @PostMapping("/usersDomain")
     public Users usersDomain(@RequestBody(required = false) Users user, HttpServletRequest request) {
+        try {
+            System.out.println(new String(request.getHeader("cc").getBytes("ISO-8859-1"), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
+
+    @PostMapping("/userMap")
+    public Map userMap(@RequestBody(required = false) Map user, HttpServletRequest request) {
         try {
             System.out.println(new String(request.getHeader("cc").getBytes("ISO-8859-1"), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
