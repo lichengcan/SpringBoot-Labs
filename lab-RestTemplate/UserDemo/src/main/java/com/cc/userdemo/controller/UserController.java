@@ -18,6 +18,11 @@ package com.cc.userdemo.controller;
 
 import com.cc.userdemo.domain.User;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 
 /**
  * @author lichengcan
@@ -44,5 +49,6 @@ public class UserController {
         user.setAge(18);
         return user;
     }
+
 
 }
