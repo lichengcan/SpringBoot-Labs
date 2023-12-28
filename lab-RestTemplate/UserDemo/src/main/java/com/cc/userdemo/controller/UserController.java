@@ -17,12 +17,11 @@
 package com.cc.userdemo.controller;
 
 import com.cc.userdemo.domain.User;
+import com.cc.userdemo.domain.Users;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
-import java.net.URI;
+import java.io.UnsupportedEncodingException;
 
 /**
  * @author lichengcan
@@ -45,11 +44,32 @@ public class UserController {
     public User userKeyValue(@RequestParam(required = false) Long id,
                              @RequestParam(required = false) String name) {
         User user = new User();
-        user.setId(id==null?1:id);
-        user.setName(name==null?"cc":name);
+        user.setId(id == null ? 1 : id);
+        user.setName(name == null ? "cc" : name);
         user.setAge(18);
         return user;
     }
 
+    @PostMapping("/userDomain")
+    public User userDomain(@RequestBody(required = false) User user, HttpServletRequest request) {
+        user.setAge(188);
+        //å°ç¿乱码了
+        try {
+            System.out.println(new String(request.getHeader("cc").getBytes("ISO-8859-1"), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
+
+    @PostMapping("/userMap")
+    public Users userMap(@RequestBody(required = false) Users user, HttpServletRequest request) {
+        try {
+            System.out.println(new String(request.getHeader("cc").getBytes("ISO-8859-1"), "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
 
 }
