@@ -2,10 +2,11 @@ package com.cc.resttemplate.controller;
 
 import com.cc.resttemplate.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -50,6 +51,24 @@ public class GetForEntityController {
     @GetMapping("/userNoRequestParam")
     public User userNoRequestParam() {
         return restTemplate.getForEntity("http://localhost:8080/userKeyValue", User.class).getBody();
+    }
+
+
+    @PostMapping("/query")
+    public Map query() {
+        String url = "http://localhost:8080/condition/query?org={org}&condition={condition}";
+        //请求参数
+        Map<String,Object> users = new HashMap<>(2);
+        users.put("org","12333");
+        Map<String,Object> conditionMap = new HashMap<>(8);
+        conditionMap.put("1","1");
+        conditionMap.put("2","2");
+        conditionMap.put("3","3");
+        conditionMap.put("tt","ss");
+        conditionMap.put("bb","aa");
+        users.put("condition",conditionMap);
+        return restTemplate.getForEntity(url,Map.class,users).getBody();
+
     }
 
 }
