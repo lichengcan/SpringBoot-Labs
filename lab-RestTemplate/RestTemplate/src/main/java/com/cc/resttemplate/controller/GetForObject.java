@@ -82,6 +82,6 @@ public class GetForObject {
     public User findOneUser(@PathVariable Long id){
         Map<String, Long> map = new HashMap<String, Long>(2);
         map.put("id",id);
-        return restTemplate.getForObject("http://localhost:8000/user/{id}", User.class, map);
+        return restTemplate.getForObject("http://localhost:8080/user/{id}", User.class, map);
     }
 }

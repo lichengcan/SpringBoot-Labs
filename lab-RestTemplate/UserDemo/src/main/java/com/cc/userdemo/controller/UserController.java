@@ -28,7 +28,7 @@ public class UserController {
 
 
     @GetMapping("/user/{id}")
-    public User user(@PathVariable Integer id) {
+    public User user(@PathVariable Long id) {
         User user = new User();
         user.setId(id);
         user.setName("cc");
@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @GetMapping("/userKeyValue")
-    public User userKeyValue(@RequestParam Integer id) {
+    public User userKeyValue(@RequestParam Long id) {
         User user = new User();
         user.setId(id);
         user.setName("cc");
