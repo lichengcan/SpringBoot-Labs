@@ -67,9 +67,9 @@ public class ExchangeController {
         return restTemplate.exchange(url, HttpMethod.POST, request, User.class).getBody();
     }
 
-    @PostMapping("/getUserMap")
-    public Users getUserMap() {
-        String url = "http://localhost:8080/userMap";
+    @PostMapping("/getUsersDomain")
+    public Users getUsersDomain() {
+        String url = "http://localhost:8080/usersDomain";
         //请求参数
         Users users = new Users();
         Map<String, Object> user = new HashMap<>(2);

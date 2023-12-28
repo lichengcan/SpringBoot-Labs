@@ -62,8 +62,8 @@ public class UserController {
         return user;
     }
 
-    @PostMapping("/userMap")
-    public Users userMap(@RequestBody(required = false) Users user, HttpServletRequest request) {
+    @PostMapping("/usersDomain")
+    public Users usersDomain(@RequestBody(required = false) Users user, HttpServletRequest request) {
         try {
             System.out.println(new String(request.getHeader("cc").getBytes("ISO-8859-1"), "UTF-8"));
         } catch (UnsupportedEncodingException e) {
